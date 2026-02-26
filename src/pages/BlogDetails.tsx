@@ -98,28 +98,29 @@ export default function BlogDetails() {
 
 
         <div className="max-w-4xl mx-auto px-6 py-12">
-          {blog.image && (
-            <div>
-              {blog.image && (
-                <div className="mb-12">
-                  <div className="relative w-full overflow-hidden rounded-3xl shadow-2xl shadow-slate-200 bg-slate-100">
-                    <img
-                      src={blog.image}
-                      alt={blog.title}
-                      /* aspect-video sets a 16:9 ratio. 
-                         object-cover ensures the image fills the area without stretching.
-                      */
-                      className="w-full aspect-video object-cover hover:scale-105 transition-transform duration-500"
-                    />
-                  </div>
+          <div className="max-w-3xl mx-auto px-6 py-8"> {/* Reduced max-width from 4xl to 3xl */}
+            {blog.image && (
+              <div className="mb-8">
+                <div className="relative w-full overflow-hidden rounded-2xl shadow-xl shadow-slate-200/60 bg-slate-100 group">
+                  <img
+                    src={blog.image}
+                    alt={blog.title}
+                    loading="lazy"
+                    /* Changed aspect-video (16:9) to aspect-[21/9] for a slimmer look.
+                       Reduced height by using h-[300px] or h-[350px] on larger screens.
+                    */
+                    className="w-full aspect-[21/9] md:h-[320px] object-cover transition-transform duration-700 ease-in-out group-hover:scale-105"
+                  />
+
+                  {/* Subtle inner border to make it look sharp */}
+                  <div className="absolute inset-0 rounded-2xl border border-black/5 pointer-events-none" />
                 </div>
-              )}
-            </div>
-          )}
+              </div>
+            )}
+          </div>
 
           <article className="relative">
             {/* Share Sidebar (Visible on Desktop) */}
-
 
             <div className="prose prose-slate prose-lg max-w-none text-slate-700 leading-relaxed whitespace-pre-line">
               {blog.content}
