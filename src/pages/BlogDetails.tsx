@@ -96,15 +96,24 @@ export default function BlogDetails() {
           </div>
         </header>
 
-        {/* Content Section */}
+
         <div className="max-w-4xl mx-auto px-6 py-12">
           {blog.image && (
-            <div className="mb-12">
-              <img
-                src={blog.image}
-                alt={blog.title}
-                className="w-full h-auto max-h-125 object-cover rounded-3xl shadow-2xl shadow-slate-200"
-              />
+            <div>
+              {blog.image && (
+                <div className="mb-12">
+                  <div className="relative w-full overflow-hidden rounded-3xl shadow-2xl shadow-slate-200 bg-slate-100">
+                    <img
+                      src={blog.image}
+                      alt={blog.title}
+                      /* aspect-video sets a 16:9 ratio. 
+                         object-cover ensures the image fills the area without stretching.
+                      */
+                      className="w-full aspect-video object-cover hover:scale-105 transition-transform duration-500"
+                    />
+                  </div>
+                </div>
+              )}
             </div>
           )}
 
