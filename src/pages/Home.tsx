@@ -4,7 +4,6 @@ import BlogList from "../components/blog/BlogList";
 import Loader from "../components/ui/Loader";
 import useBlogs from "../hooks/useBlogs";
 import { useAuth } from "../context/AuthContext";
-import { Navigate } from "react-router-dom";
 
 export default function Home() {
   const { blogs } = useBlogs();
@@ -12,9 +11,6 @@ export default function Home() {
 
   // wait for firebase
   if (loading) return <Loader />;
-
-  // redirect if not logged in
-  if (!user) return <Navigate to="/login" replace />
 
   return (
     <>

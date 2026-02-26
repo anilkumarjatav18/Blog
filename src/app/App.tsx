@@ -14,13 +14,13 @@ export default function App() {
 
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
+            <Route path="/" element={<Home />} />
+            <Route path="/blog/:id" element={<BlogDetails />} />
             <Route
                 path="/*"
                 element={
                     <AuthGate>
                         <Routes>
-                            <Route path="/" element={<Home />} />
-                            <Route path="/blog/:id" element={<BlogDetails />} />
                             <Route path="/create" element={<CreateBlog />} />
                             <Route path="/edit/:id" element={<EditBlog />} />
                             <Route path="/my-blogs" element={<MyBlogs />} />
