@@ -106,13 +106,9 @@ export default function BlogDetails() {
                     src={blog.image}
                     alt={blog.title}
                     loading="lazy"
-                    /* Changed aspect-video (16:9) to aspect-[21/9] for a slimmer look.
-                       Reduced height by using h-[300px] or h-[350px] on larger screens.
-                    */
-                    className="w-full aspect-[21/9] md:h-[320px] object-cover transition-transform duration-700 ease-in-out group-hover:scale-105"
+                    className="w-full aspect-21-9 md:h-320px object-cover transition-transform duration-700 ease-in-out group-hover:scale-105"
                   />
 
-                  {/* Subtle inner border to make it look sharp */}
                   <div className="absolute inset-0 rounded-2xl border border-black/5 pointer-events-none" />
                 </div>
               </div>
@@ -128,7 +124,7 @@ export default function BlogDetails() {
 
             <footer className="mt-16 pt-8 border-t border-slate-200">
               <div className="bg-blue-50 rounded-2xl p-8 text-center">
-                <h3 className="text-xl font-bold text-slate-900 mb-2">Enjoyed this article?</h3>
+                <h3 className="text-xl font-bold text-slate-900 mb-2">Have you enjoyed this article?</h3>
                 <p className="text-slate-600 mb-6">Join our newsletter to get the latest posts delivered straight to your inbox.</p>
                 <div className="flex max-w-md mx-auto gap-2">
                   <input type="email" placeholder="Email address" className="grow px-4 py-2 rounded-lg border border-slate-200 focus:outline-none focus:ring-2 focus:ring-blue-500" />
