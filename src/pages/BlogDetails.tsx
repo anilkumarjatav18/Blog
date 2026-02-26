@@ -119,12 +119,7 @@ export default function BlogDetails() {
 
           <article className="relative">
             {/* Share Sidebar (Visible on Desktop) */}
-            <div className="hidden lg:block absolute -left-24 top-0 space-y-4">
-              <div className="flex flex-col gap-3 sticky top-32">
-                <button className="p-3 bg-white border border-slate-200 rounded-full hover:text-blue-600 hover:border-blue-200 transition-all shadow-sm">🐦</button>
-                <button className="p-3 bg-white border border-slate-200 rounded-full hover:text-blue-600 hover:border-blue-200 transition-all shadow-sm">🔗</button>
-              </div>
-            </div>
+
 
             <div className="prose prose-slate prose-lg max-w-none text-slate-700 leading-relaxed whitespace-pre-line">
               {blog.content}
