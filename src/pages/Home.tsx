@@ -3,11 +3,11 @@ import Footer from "../components/layout/Footer";
 import BlogList from "../components/blog/BlogList";
 import Loader from "../components/ui/Loader";
 import useBlogs from "../hooks/useBlogs";
-import { useAuth } from "../context/AuthContext";
+
 
 export default function Home() {
-  const { blogs } = useBlogs();
-  const { user, loading } = useAuth();
+  const { blogs, loading } = useBlogs();
+
 
   // wait for firebase
   if (loading) return <Loader />;
